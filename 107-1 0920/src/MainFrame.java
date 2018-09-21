@@ -1,12 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame  extends JFrame{
     private JButton jbt1[][] = new JButton[3][4] ;
     private JLabel jlb = new JLabel("");
+
     private JPasswordField jps = new JPasswordField();
-    private String st = new String("123123");
+
     private Container cp ;
     private JPanel jpn1 = new JPanel(new GridLayout(1,1,5,5));
     private JPanel jpn2 = new JPanel(new GridLayout(3,4,3,3));
@@ -56,6 +58,17 @@ public class MainFrame  extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+
+        jbt1[2][2].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (new String(jps.getPassword()).equals("123456")){
+                    jlb.setText("OK");
+                }else {
+                    jlb.setText("NO");
+                }
             }
         });
 
