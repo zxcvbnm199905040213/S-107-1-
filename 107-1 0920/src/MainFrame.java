@@ -3,20 +3,24 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class MainFrame  extends JFrame{
     private JButton jbt1[][] = new JButton[3][4] ;
+
     private JLabel jlb = new JLabel("");
 
     private JPasswordField jps = new JPasswordField();
 
     private Container cp ;
+
     private JPanel jpn1 = new JPanel(new GridLayout(1,1,5,5));
     private JPanel jpn2 = new JPanel(new GridLayout(3,4,3,3));
     private JPanel jpn3 = new JPanel(new GridLayout(1,1,5,5));
-    private  JButton jbt = new JButton("Exit");
+
     public MainFrame(){
         init();
     }
+
     private void init(){
 
         this.setBounds(100,100,425,500);
@@ -57,7 +61,70 @@ public class MainFrame  extends JFrame{
         jbt1[0][0].addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                jps.setText("0");
+            }
+        });
 
+        jbt1[0][1].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("1");
+            }
+        });
+
+        jbt1[0][2].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("2");
+            }
+        });
+
+        jbt1[0][3].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("3");
+            }
+        });
+
+        jbt1[1][0].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("4");
+            }
+        });
+
+        jbt1[1][1].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("5");
+            }
+        });
+
+        jbt1[1][2].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("6");
+            }
+        });
+
+        jbt1[1][3].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("7");
+            }
+        });
+
+        jbt1[2][0].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("8");
+            }
+        });
+
+        jbt1[2][1].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jps.setText("9");
             }
         });
 
