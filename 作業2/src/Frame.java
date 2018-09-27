@@ -7,6 +7,6 @@ public class Frame extends JFrame{
     private void exe(){
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(100,100,980,600);
+        this.setBounds(150,150,980,600);
     }
 }
