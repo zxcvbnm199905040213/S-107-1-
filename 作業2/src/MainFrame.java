@@ -10,7 +10,7 @@ public class MainFrame extends JFrame {
     private JPanel jpn=new JPanel(new GridLayout(4,3,3,3));
     private JButton jbtns[]=new JButton[12];
     private String jbtnlabel[]=new String[10];
-    private JPasswordField jlb=new JPasswordField("");
+    private JPasswordField jps=new JPasswordField("");
     private Font fnt=new Font(null,Font.BOLD,18);
     private Login lg;
     public MainFrame(Login lg1){
@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
         cp = this.getContentPane();
         cp.setLayout(new BorderLayout());
         cp.add(jpn,BorderLayout.CENTER);
-        cp.add(jlb,BorderLayout.NORTH);
+        cp.add(jps,BorderLayout.NORTH);
         genLabel(jbtnlabel);
         for (int i=0;i<10;i++){
             jbtns[i]=new JButton(jbtnlabel[i]);
@@ -34,7 +34,7 @@ public class MainFrame extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                     JButton jButton=(JButton) actionEvent.getSource();
-                    jlb.setText(jlb.getText()+jButton.getText());
+                    jps.setText(jps.getText()+jButton.getText());
                 }
             });
         }
@@ -48,7 +48,7 @@ public class MainFrame extends JFrame {
         jbtns[10].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                lg.setPassWord(new String(jlb.getPassword()));
+                lg.setPassWord(new String(jps.getPassword()));
                 MainFrame.this.setVisible(false);
             }
         });
