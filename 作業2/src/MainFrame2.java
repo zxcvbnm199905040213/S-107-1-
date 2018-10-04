@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainFrame2 extends JFrame {
     public JButton jbtnStart = new JButton("Start");
@@ -13,13 +15,27 @@ public class MainFrame2 extends JFrame {
     private Container cp;
     boolean boo = true;
 
-    public MainFrame2() {
-        this.init();
+    public Frame frame;
+
+    public MainFrame2(Frame frame) {
+        this.frame = frame;
+        init();
     }
 
     public void init() {
         this.setBounds(80, 60, 800, 600);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                super.windowClosed(e);
+                Frame f2 = new Frame();
+                f2.setVisible(true);
+            }
+        });
+
+
         cp = this.getContentPane();
         cp.add(jpnc, BorderLayout.CENTER);
         cp.add(jpnp, BorderLayout.EAST);
