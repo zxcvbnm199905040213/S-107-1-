@@ -12,6 +12,7 @@ public class Frame extends JFrame{
     private JMenuItem jmiClose = new JMenuItem("Close");
     private JMenuItem jmiExit = new JMenuItem("Exit");
     private JMenuItem jmiOX = new JMenuItem("OX");
+    private JMenuItem jmiK = new JMenuItem("K");
     Container cp;
     public Frame(){
         exe();
@@ -29,6 +30,7 @@ public class Frame extends JFrame{
         jmnuFile.add(jmiOpen);
         jmnuFile.add(jmiClose);
         jmnuFile.add(jmiExit);
+        jmnuTool.add(jmiK);
         jmnuGame.add(jmiOX);
 
         jmiExit.addActionListener(new AbstractAction() {
@@ -42,6 +44,14 @@ public class Frame extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 MainFrame2 OX = new MainFrame2(Frame.this);
                 OX.setVisible(true);
+                Frame.this.setVisible(false);
+            }
+        });
+        jmiK.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainFrame3 K = new MainFrame3(Frame.this);
+                K.setVisible(true);
                 Frame.this.setVisible(false);
             }
         });
