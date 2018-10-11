@@ -24,7 +24,15 @@ public class MainFrame2 extends JFrame {
 
     public void init() {
         this.setBounds(80, 60, 800, 600);
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                Frame frm=new Frame();
+                frm.setVisible(true);
+            }
+        });
+
 
         this.addWindowListener(new WindowAdapter() {
             @Override
