@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -176,7 +177,24 @@ public class MainFrame3     extends JFrame{
         jmisave.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                try {
+                    if (jta2.getText().length() > 0) {
+                        jfc.setFileFilter(new FileNameExtensionFilter(".txt ", "txt"));
+                        if (jfc.showSaveDialog(MainFrame3.this) == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = new File(jfc.getSelectedFile().getPath() + jfc.getSelectedFile().getName() + ".txt");
+                            FileWriter fw = new FileWriter(selectedFile);
+                            BufferedWriter bfw = new BufferedWriter(fw);
+                            bfw.write(jta2.getText());
+                            bfw.close();
+                        }
+                    }else {
+                        JOptionPane.showMessageDialog(MainFrame3.this, "No Data Can Write Out!!");
+                    }
+                }catch(IOException ioe2){
+                    JOptionPane.showMessageDialog(MainFrame3.this, "open file error: " + ioe2.toString());
+                } catch (Exception ioe3) {
+                    JOptionPane.showMessageDialog(MainFrame3.this, "Error: " + ioe3.toString());
+                }
             }
         });
         jbtnclose.addActionListener(new AbstractAction() {
