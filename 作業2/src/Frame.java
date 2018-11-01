@@ -14,6 +14,7 @@ public class Frame extends JFrame{
     private JMenuItem jmiOX = new JMenuItem("OX");
     private JMenuItem jmiK = new JMenuItem("加密");
     private JMenuItem jmiKK = new JMenuItem("加密２");
+    private JMenuItem jmiDT = new JMenuItem("DT");
     Container cp;
     public Frame(){
         exe();
@@ -34,6 +35,7 @@ public class Frame extends JFrame{
         jmnuTool.add(jmiK);
         jmnuTool.add(jmiKK);
         jmnuGame.add(jmiOX);
+        jmnuGame.add(jmiDT);
 
         jmiExit.addActionListener(new AbstractAction() {
             @Override
@@ -62,6 +64,14 @@ public class Frame extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 encryptfile KK = new encryptfile(Frame.this);
                 KK.setVisible(true);
+                Frame.this.setVisible(false);
+            }
+        });
+        jmiDT.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DigiralTimer DT = new DigiralTimer(Frame.this);
+                DT.setVisible(true);
                 Frame.this.setVisible(false);
             }
         });
